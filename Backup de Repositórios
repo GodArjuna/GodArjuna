@@ -1,0 +1,25 @@
+import os
+import shutil
+import datetime
+
+def gerar_backup(diretorio_origem, diretorio_backup):
+    # Nome do arquivo de backup com base na data e hora
+    nome_backup = f"backup_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.zip"
+    caminho_backup = os.path.join(diretorio_backup, nome_backup)
+
+    # Criar o diretório de backup se não existir
+    os.makedirs(diretorio_backup, exist_ok=True)
+
+    # Criar o arquivo zip do backup
+    shutil.make_archive(caminho_backup.replace('.zip', ''), 'zip', diretorio_origem)
+
+    print(f"✅ Backup criado com sucesso: {caminho_backup}")
+
+# Defina o diretório de origem (onde estão os arquivos a serem copiados)
+diretorio_origem = "./diretorio_origem"  # Altere para o diretório que deseja fazer o backup
+
+# Defina o diretório de destino (onde o backup será armazenado)
+diretorio_backup = "./backups"  # Pasta onde os backups serão armazenados
+
+# Chama a função para gerar o backup
+gerar_backup(diretorio_origem, diretorio_backup)
