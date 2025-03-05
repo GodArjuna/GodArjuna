@@ -1,16 +1,15 @@
-## Hi there 👋
+# Olá! Me chamo Kawan Villar 👋
 
-<!--
-**GodArjuna/GodArjuna** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+💻 Desenvolvedor [De Banco de Dados]  
+🚀 Apaixonado por tecnologia e inovação  
+📚 Atualmente aprendendo [Java e Phyton]  
+🌎 Conecte-se comigo: [LinkedIn](https://linkedin.com/in/seu-perfil) | [Twitter](https://twitter.com/seu_perfil)
 
-Here are some ideas to get you started:
+## 🚀 Tecnologias que uso:
+- 🖥️ **Front-end**: HTML, CSS, JavaScript; 
+- ⚙️ **Back-end**: Node.js, Python, Java, PHP;
+- 🗄️ **Banco de Dados**: MySQL, MongoDB, PostgreSQL;
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+![Linkedin](https://www.linkedin.com/in/kawan-villar-6306b7285/)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=SEU_USERNAME&theme=transparent&bg_color=000&border_color=30A3DC&show_icons=true&icon_color=30A3DC&title_color=E94D5F&text_color=FFF&hide_title=true)
