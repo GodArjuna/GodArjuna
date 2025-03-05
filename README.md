@@ -1,9 +1,9 @@
 # Olá! Me chamo Kawan Villar 👋
 
-💻 Desenvolvedor [De Banco de Dados]  
-🚀 Apaixonado por tecnologia e inovação  
+💻 Futuro Administrador De Banco de Dados;  
+🚀 Apaixonado por tecnologia e inovação;
 📚 Atualmente aprendendo [Java e Phyton]  
-🌎 Conecte-se comigo: [LinkedIn](https://linkedin.com/in/seu-perfil) | [Twitter](https://twitter.com/seu_perfil)
+🌎 Conecte-se comigo: [LinkedIn](https://www.linkedin.com/in/kawan-villar-6306b7285/)
 
 ## 🚀 Tecnologias que uso:
 - 🖥️ **Front-end**: HTML, CSS, JavaScript; 
