@@ -2,7 +2,7 @@
 
 💻 Futuro Administrador De Banco de Dados;  
 🚀 Apaixonado por tecnologia e inovação;
-📚 Atualmente aprendendo [Java e Phyton]  
+📚 Atualmente aprendendo [Java e SQL]  
 🌎 Conecte-se comigo: [LinkedIn](https://www.linkedin.com/in/kawan-villar-6306b7285/)
 
 ## 🚀 Tecnologias que uso:
