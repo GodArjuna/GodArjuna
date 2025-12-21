@@ -42,6 +42,11 @@ public class WhitelistManager {
      * @return true se removido com sucesso, false se não encontrado
      */
     public boolean removerServidor(String servidor) {
+        if (servidor == null || servidor.trim().isEmpty()) {
+            System.out.println("❌ Erro: Servidor inválido!");
+            return false;
+        }
+        
         if (whitelist.contains(servidor)) {
             whitelist.remove(servidor);
             System.out.println("✅ Servidor '" + servidor + "' removido da whitelist com sucesso!");
@@ -58,6 +63,9 @@ public class WhitelistManager {
      * @return true se o servidor estiver na whitelist, false caso contrário
      */
     public boolean estaWhitelisted(String servidor) {
+        if (servidor == null || servidor.trim().isEmpty()) {
+            return false;
+        }
         return whitelist.contains(servidor);
     }
 
@@ -107,8 +115,15 @@ public class WhitelistManager {
             System.out.println("0. Sair");
             System.out.print("\nEscolha uma opção: ");
             
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar buffer
+            int opcao;
+            try {
+                opcao = scanner.nextInt();
+                scanner.nextLine(); // Limpar buffer
+            } catch (Exception e) {
+                System.out.println("❌ Entrada inválida! Por favor, digite um número.");
+                scanner.nextLine(); // Limpar buffer em caso de erro
+                continue;
+            }
             
             switch (opcao) {
                 case 1:
