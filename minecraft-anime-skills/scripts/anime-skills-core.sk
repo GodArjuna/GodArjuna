@@ -1,0 +1,200 @@
+# Sistema de Skills de Anime - Core System
+# Minecraft 1.7.10 + Skript 2.2
+# Desenvolvido com suporte de IA (GitHub Copilot)
+
+# ================================
+# SISTEMA DE MANA
+# ================================
+
+# Inicialização de mana para novos jogadores
+on join:
+    if {player_mana_%player%} is not set:
+        set {player_mana_%player%} to 100
+        set {player_max_mana_%player%} to 100
+        send "§a[AnimeSkills] Sistema de mana inicializado!" to player
+
+# Regeneração de mana a cada 5 segundos
+every 5 seconds:
+    loop all players:
+        if {player_mana_%loop-player%} is less than {player_max_mana_%loop-player%}:
+            add 5 to {player_mana_%loop-player%}
+            if {player_mana_%loop-player%} > {player_max_mana_%loop-player%}:
+                set {player_mana_%loop-player%} to {player_max_mana_%loop-player%}
+
+# Comando para verificar mana
+command /mana:
+    trigger:
+        send "§b[AnimeSkills] §fMana: §a{player_mana_%player%}§f/§a{player_max_mana_%player%}" to player
+        send "§7Use /skills para ver suas habilidades disponíveis" to player
+
+# ================================
+# SISTEMA DE SKILLS
+# ================================
+
+# Variáveis globais
+on load:
+    set {animeskills.version} to "1.0.0"
+    set {animeskills.enabled} to true
+    send "§a[AnimeSkills] Sistema carregado com sucesso! v%{animeskills.version}%" to console
+
+# Comando principal do sistema
+command /animeskills [<text>] [<text>]:
+    aliases: /as, /askills
+    permission: animeskills.admin
+    trigger:
+        if arg 1 is not set:
+            send "§6§l[AnimeSkills] §fComandos disponíveis:"
+            send "§e/animeskills reload §7- Recarrega o sistema"
+            send "§e/animeskills list §7- Lista todas as skills"
+            send "§e/animeskills give <player> <skill> §7- Dá uma skill para um jogador"
+            send "§e/animeskills info §7- Informações do sistema"
+        else if arg 1 is "reload":
+            set {animeskills.enabled} to false
+            wait 1 tick
+            set {animeskills.enabled} to true
+            send "§a[AnimeSkills] Sistema recarregado com sucesso!" to player
+        else if arg 1 is "info":
+            send "§6§l[AnimeSkills] §fInformações do Sistema"
+            send "§fVersão: §a%{animeskills.version}%"
+            send "§fMinecraft: §a1.7.10"
+            send "§fIA: §aGitHub Copilot Integration"
+            send "§fAnimes Disponíveis: §aNaruto, One Piece, Dragon Ball, MHA"
+        else if arg 1 is "list":
+            send "§6§l[AnimeSkills] §fSkills Disponíveis:"
+            send "§c§lNARUTO: §fRasengan, Chidori, Shadow Clone, Sharingan"
+            send "§9§lONE PIECE: §fGomu Gomu, Santoryu, Diable Jambe"
+            send "§e§lDRAGON BALL: §fKamehameha, Spirit Bomb, Super Saiyan"
+            send "§a§lMY HERO ACADEMIA: §fOne For All, Explosion"
+
+# Comando para ver skills do jogador
+command /skills:
+    aliases: /myskills, /abilities
+    trigger:
+        send "§6§l=== SUAS HABILIDADES ===" to player
+        send "" to player
+        send "§c⚡ NARUTO:" to player
+        if player has permission "animeskills.naruto.rasengan":
+            send "  §a✓ §f/rasengan §7- Esfera de chakra rotativo" to player
+        if player has permission "animeskills.naruto.chidori":
+            send "  §a✓ §f/chidori §7- Relâmpago cortante" to player
+        if player has permission "animeskills.naruto.shadow-clone":
+            send "  §a✓ §f/shadowclone §7- Clone das sombras" to player
+        send "" to player
+        send "§9🌊 ONE PIECE:" to player
+        if player has permission "animeskills.one-piece.gomu-pistol":
+            send "  §a✓ §f/gomupistol §7- Soco elástico" to player
+        send "" to player
+        send "§e⚡ DRAGON BALL:" to player
+        if player has permission "animeskills.dragon-ball.kamehameha":
+            send "  §a✓ §f/kamehameha §7- Onda de energia" to player
+        send "" to player
+        send "§7Use §f/mana §7para ver sua mana atual" to player
+
+# ================================
+# SISTEMA DE COMBO
+# ================================
+
+# Detectar combos entre skills
+function check_combo(player: player, skill: text):
+    if {last_skill_%{_player}%} is set:
+        if difference between now and {last_skill_time_%{_player}%} is less than 5 seconds:
+            send "§e§l⚡ COMBO! §f+50%% de dano!" to {_player}
+            play sound "LEVEL_UP" to {_player}
+            return true
+    return false
+
+# ================================
+# SISTEMA DE LEVEL E EXPERIÊNCIA
+# ================================
+
+# Adicionar XP ao usar skills
+function add_skill_xp(player: player, amount: number):
+    add {_amount} to {skill_xp_%{_player}%}
+    
+    # Level up
+    if {skill_xp_%{_player}%} >= 100:
+        subtract 100 from {skill_xp_%{_player}%}
+        add 1 to {skill_level_%{_player}%}
+        add 10 to {player_max_mana_%{_player}%}
+        
+        send "§6§l⭐ LEVEL UP! §fVocê alcançou o nível §a%{skill_level_%{_player}%}%!" to {_player}
+        send "§aMana máxima aumentada em 10!" to {_player}
+        play sound "LEVEL_UP" to {_player}
+        
+        # Efeitos visuais
+        play "FIREWORKS_SPARK" at {_player}
+
+# Comando para ver nível
+command /skilllevel:
+    aliases: /slevel, /sklvl
+    trigger:
+        if {skill_level_%player%} is not set:
+            set {skill_level_%player%} to 1
+        if {skill_xp_%player%} is not set:
+            set {skill_xp_%player%} to 0
+            
+        send "§6§l=== SEU NÍVEL ===" to player
+        send "§fNível: §a%{skill_level_%player%}%" to player
+        send "§fXP: §b%{skill_xp_%player%}%§f/§b100" to player
+        send "§fMana Máxima: §d%{player_max_mana_%player%}%" to player
+
+# ================================
+# PARTÍCULAS E EFEITOS
+# ================================
+
+# Função para criar círculo de partículas
+function particle_circle(loc: location, particle: text, radius: number):
+    loop 36 times:
+        set {_angle} to loop-number * 10
+        set {_x} to cos({_angle}) * {_radius}
+        set {_z} to sin({_angle}) * {_radius}
+        play {_particle} at {_loc} ~ {_x} ~ 0 ~ {_z}
+
+# Função para criar linha de partículas (para ataques de projétil)
+function particle_line(start: location, end: location, particle: text):
+    set {_distance} to distance between {_start} and {_end}
+    set {_steps} to round({_distance} * 10)
+    
+    loop {_steps} times:
+        set {_progress} to loop-number / {_steps}
+        set {_x} to x-coordinate of {_start} + ((x-coordinate of {_end}) - (x-coordinate of {_start})) * {_progress}
+        set {_y} to y-coordinate of {_start} + ((y-coordinate of {_end}) - (y-coordinate of {_start})) * {_progress}
+        set {_z} to z-coordinate of {_start} + ((z-coordinate of {_end}) - (z-coordinate of {_start})) * {_progress}
+        play {_particle} at location({_x}, {_y}, {_z}, world of {_start})
+
+# ================================
+# SISTEMA DE COOLDOWN VISUAL
+# ================================
+
+# Mostrar cooldown na action bar
+every 1 second:
+    loop all players:
+        if {cooldown_display_%loop-player%} is set:
+            send action bar "§c⏳ Cooldown: %{cooldown_display_%loop-player%}%" to loop-player
+
+# ================================
+# AJUDA E TUTORIAL
+# ================================
+
+command /animeskills-help:
+    aliases: /ashelp, /skillshelp
+    trigger:
+        send "§6§l========= ANIME SKILLS HELP =========" to player
+        send "" to player
+        send "§f§lComo usar:" to player
+        send "§71. Use §f/skills §7para ver suas habilidades" to player
+        send "§72. Use §f/mana §7para verificar sua mana" to player
+        send "§73. Use §f/skilllevel §7para ver seu nível" to player
+        send "§74. Execute o comando da skill para usá-la" to player
+        send "" to player
+        send "§f§lSistema de Mana:" to player
+        send "§7- Cada skill consome mana" to player
+        send "§7- Mana regenera 5 pontos a cada 5 segundos" to player
+        send "§7- Aumente seu nível para ter mais mana máxima" to player
+        send "" to player
+        send "§f§lSistema de Combo:" to player
+        send "§7- Use skills em sequência (dentro de 5s)" to player
+        send "§7- Combos aumentam o dano em 50%%" to player
+        send "" to player
+        send "§f§lCriado com suporte de IA (GitHub Copilot)" to player
+        send "§6§l====================================" to player

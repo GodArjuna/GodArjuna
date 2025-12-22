@@ -1,0 +1,137 @@
+{
+  "system": {
+    "name": "Minecraft Anime Skills",
+    "version": "1.0.0",
+    "minecraft_version": "1.7.10",
+    "skript_version": "2.2+",
+    "language": "pt-BR",
+    "ai_powered": true
+  },
+  "skills": [
+    {
+      "id": "rasengan",
+      "name": "Rasengan",
+      "anime": "Naruto",
+      "type": "attack",
+      "mana_cost": 40,
+      "cooldown": 8,
+      "damage": 12,
+      "range": 10,
+      "description": "Esfera de chakra rotativo concentrado",
+      "file": "naruto_rasengan.sk"
+    },
+    {
+      "id": "chidori",
+      "name": "Chidori",
+      "anime": "Naruto",
+      "type": "attack",
+      "mana_cost": 50,
+      "cooldown": 10,
+      "damage": 15,
+      "range": 5,
+      "description": "Relâmpago cortante que perfura tudo",
+      "file": "naruto_chidori.sk"
+    },
+    {
+      "id": "shadow-clone",
+      "name": "Shadow Clone",
+      "anime": "Naruto",
+      "type": "buff",
+      "mana_cost": 60,
+      "cooldown": 30,
+      "duration": 20,
+      "description": "Cria clones de sombra para auxiliar na batalha",
+      "file": "naruto_shadow_clone.sk"
+    },
+    {
+      "id": "kamehameha",
+      "name": "Kamehameha",
+      "anime": "Dragon Ball",
+      "type": "attack",
+      "mana_cost": 70,
+      "cooldown": 15,
+      "damage": "4-15",
+      "range": 20,
+      "description": "Poderosa onda de energia",
+      "file": "dragonball_kamehameha.sk"
+    },
+    {
+      "id": "gomu-pistol",
+      "name": "Gomu Gomu no Pistol",
+      "anime": "One Piece",
+      "type": "attack",
+      "mana_cost": 25,
+      "cooldown": 5,
+      "damage": 8,
+      "range": 15,
+      "description": "Soco elástico de longo alcance",
+      "file": "onepiece_gomu_pistol.sk"
+    },
+    {
+      "id": "one-for-all",
+      "name": "One For All",
+      "anime": "My Hero Academia",
+      "type": "buff",
+      "mana_cost": 80,
+      "cooldown": 60,
+      "duration": 30,
+      "description": "Libera o poder acumulado",
+      "file": "mha_one_for_all.sk"
+    }
+  ],
+  "systems": {
+    "mana": {
+      "enabled": true,
+      "default_max": 100,
+      "regen_rate": 5,
+      "regen_interval": 5
+    },
+    "combo": {
+      "enabled": true,
+      "time_window": 5,
+      "damage_multiplier": 1.5
+    },
+    "level": {
+      "enabled": true,
+      "xp_per_level": 100,
+      "mana_per_level": 10
+    },
+    "effects": {
+      "particles": true,
+      "sounds": true,
+      "visual_feedback": true
+    }
+  },
+  "permissions": {
+    "admin": "animeskills.admin",
+    "use": "animeskills.use",
+    "naruto": {
+      "all": "animeskills.naruto.*",
+      "rasengan": "animeskills.naruto.rasengan",
+      "chidori": "animeskills.naruto.chidori",
+      "shadow-clone": "animeskills.naruto.shadow-clone"
+    },
+    "one-piece": {
+      "all": "animeskills.one-piece.*",
+      "gomu-pistol": "animeskills.one-piece.gomu-pistol"
+    },
+    "dragon-ball": {
+      "all": "animeskills.dragon-ball.*",
+      "kamehameha": "animeskills.dragon-ball.kamehameha"
+    },
+    "my-hero-academia": {
+      "all": "animeskills.my-hero-academia.*",
+      "one-for-all": "animeskills.my-hero-academia.one-for-all"
+    }
+  },
+  "ai_integration": {
+    "enabled": true,
+    "provider": "github-copilot",
+    "features": [
+      "skill_generation",
+      "balance_suggestions",
+      "combo_suggestions",
+      "code_completion"
+    ]
+  }
+}

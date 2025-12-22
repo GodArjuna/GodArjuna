@@ -1,0 +1,84 @@
+# Minecraft Anime Skills System - Configuration
+# Compatible with Minecraft 1.7.10 + Skript 2.2
+
+# General Settings
+settings:
+  plugin-name: "AnimeSkills"
+  version: "1.0.0"
+  minecraft-version: "1.7.10"
+  language: "pt-BR"
+  
+# AI Integration Settings
+ai-integration:
+  enabled: true
+  provider: "github-copilot"  # Options: github-copilot, openai, custom
+  api-endpoint: "http://localhost:8080/ai"  # For custom AI
+  
+  # Skill generation settings
+  generation:
+    max-skills-per-request: 5
+    cooldown-seconds: 30
+    require-admin: true
+    
+# Anime Sources Configuration
+anime-sources:
+  naruto:
+    enabled: true
+    skills:
+      - rasengan
+      - chidori
+      - shadow-clone
+      - sharingan
+      - sage-mode
+      
+  one-piece:
+    enabled: true
+    skills:
+      - gomu-gomu-no-pistol
+      - santoryu
+      - diable-jambe
+      - haki
+      
+  dragon-ball:
+    enabled: true
+    skills:
+      - kamehameha
+      - spirit-bomb
+      - instant-transmission
+      - super-saiyan
+      
+  my-hero-academia:
+    enabled: true
+    skills:
+      - one-for-all
+      - explosion
+      - half-cold-half-hot
+      - hardening
+      
+# Skill Parameters
+skill-settings:
+  cooldown-enabled: true
+  mana-system: true
+  level-requirements: true
+  permission-based: true
+  
+  # Default values
+  defaults:
+    cooldown: 10
+    mana-cost: 50
+    min-level: 1
+    damage: 10.0
+    range: 20
+    
+# Effects and Particles
+effects:
+  particles: true
+  sounds: true
+  visual-effects: true
+  damage-indicators: true
+  
+# Database Settings (for player skills)
+database:
+  type: "file"  # Options: file, mysql, sqlite
+  auto-save: true
+  save-interval: 300  # seconds
