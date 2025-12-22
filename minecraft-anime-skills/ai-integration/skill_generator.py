@@ -77,18 +77,18 @@ function {skill_id}_effect(player: player):
         
         effects = {
             "attack": """# Attack Effect
-            set {{_target}} to target entity of player
-            if {{_target}} is set:
+            set {_target} to target entity of player
+            if {_target} is set:
                 # Damage calculation
-                damage {{_target}} by 10 hearts
+                damage {_target} by 10 hearts
                 
                 # Particle effects
-                play "EXPLOSION_LARGE" at {{_target}}
-                play sound "EXPLODE" to all players in radius 20 of {{_target}}
+                play "EXPLOSION_LARGE" at {_target}
+                play sound "EXPLODE" to all players in radius 20 of {_target}
                 
                 # Knockback
-                push {{_target}} upwards with force 1
-                push {{_target}} in direction of player with force 2
+                push {_target} upwards with force 1
+                push {_target} in direction of player with force 2
             else:
                 # Area attack
                 loop all entities in radius 5 of player:
@@ -106,12 +106,12 @@ function {skill_id}_effect(player: player):
             play sound "ANVIL_LAND" to player
             
             # Create particle circle
-            set {{_loc}} to location of player
+            set {_loc} to location of player
             loop 36 times:
-                set {{_angle}} to loop-number * 10
-                set {{_x}} to cos({{_angle}}) * 2
-                set {{_z}} to sin({{_angle}}) * 2
-                play "REDSTONE" at {{_loc}} ~ {{_x}} ~ 0 ~ {{_z}}""",
+                set {_angle} to loop-number * 10
+                set {_x} to cos({_angle}) * 2
+                set {_z} to sin({_angle}) * 2
+                play "REDSTONE" at {_loc} ~ {_x} ~ 0 ~ {_z}""",
                 
             "movement": """# Movement Effect
             # Enhanced movement
