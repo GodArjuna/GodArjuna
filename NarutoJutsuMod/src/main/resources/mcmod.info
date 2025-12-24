@@ -1,0 +1,16 @@
+[
+{
+  "modid": "narutojutsu",
+  "name": "Naruto Jutsu Mod",
+  "description": "Adiciona sistema de Jutsus do anime Naruto ao Minecraft com efeitos de partículas e integração com Dragon Block C.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["GodArjuna"],
+  "credits": "Criado por GodArjuna",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

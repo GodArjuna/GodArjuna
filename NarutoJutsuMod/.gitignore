@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+eclipse/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Minecraft
+run/
+logs/
+
+# Files
+*.class
+*.log
+*.jar
+!gradle-wrapper.jar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NBT
+*.dat
+*.dat_old
