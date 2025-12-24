@@ -23,12 +23,25 @@ public class JutsuRegistry {
      * Chamado durante a pré-inicialização do mod
      */
     public static void registerJutsus() {
-        // Registrar todos os Jutsus implementados
+        // Jutsus básicos
         registerJutsu(new RasenganJutsu());
         registerJutsu(new ChidoriJutsu());
         registerJutsu(new FireballJutsu());
         registerJutsu(new ShadowCloneJutsu());
         registerJutsu(new SubstitutionJutsu());
+        
+        // Jutsus avançados
+        registerJutsu(new AmaterasuJutsu());
+        registerJutsu(new EightGatesJutsu());
+        registerJutsu(new WaterDragonJutsu());
+        
+        // Jutsus dos 6 Caminhos do Pain
+        registerJutsu(new ShinraTenseiJutsu());    // Deva Path - Repulsão
+        registerJutsu(new BanshoTeninJutsu());     // Deva Path - Atração
+        registerJutsu(new AsuraAttackJutsu());     // Asura Path
+        registerJutsu(new AnimalSummonJutsu());    // Animal Path
+        registerJutsu(new ChakraAbsorptionJutsu());// Preta Path
+        registerJutsu(new SoulRipJutsu());         // Human Path
     }
     
     /**

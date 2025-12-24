@@ -38,6 +38,33 @@ public class ConfigHandler {
     /** Dano causado por cada Shadow Clone */
     public static double shadowCloneDamage = 5.0;
     
+    /** Dano causado pelo Amaterasu */
+    public static double amaterasuDamage = 25.0;
+    
+    /** Dano causado pelo Eight Gates (auto-dano) */
+    public static double eightGatesDamage = 5.0;
+    
+    /** Dano causado pelo Water Dragon */
+    public static double waterDragonDamage = 20.0;
+    
+    /** Dano causado pelo Shinra Tensei */
+    public static double shinraTenseiDamage = 18.0;
+    
+    /** Dano causado pelo Bansho Tenin */
+    public static double banshoTeninDamage = 8.0;
+    
+    /** Dano causado pelo Asura Attack */
+    public static double asuraAttackDamage = 15.0;
+    
+    /** Dano causado pelo Animal Summon */
+    public static double animalSummonDamage = 10.0;
+    
+    /** Cura do Chakra Absorption */
+    public static double chakraAbsorptionHeal = 10.0;
+    
+    /** Dano causado pelo Soul Rip */
+    public static double soulRipDamage = 30.0;
+    
     // ==================== CONFIGURAÇÕES DE PARTÍCULAS ====================
     
     /** Ativa/desativa efeitos de partículas */
@@ -62,6 +89,33 @@ public class ConfigHandler {
     
     /** Cooldown do Substitution Jutsu em ticks */
     public static int substitutionCooldown = 150;
+    
+    /** Cooldown do Amaterasu em ticks */
+    public static int amaterasuCooldown = 300;
+    
+    /** Cooldown do Eight Gates em ticks */
+    public static int eightGatesCooldown = 600;
+    
+    /** Cooldown do Water Dragon em ticks */
+    public static int waterDragonCooldown = 200;
+    
+    /** Cooldown do Shinra Tensei em ticks */
+    public static int shinraTenseiCooldown = 250;
+    
+    /** Cooldown do Bansho Tenin em ticks */
+    public static int banshoTeninCooldown = 180;
+    
+    /** Cooldown do Asura Attack em ticks */
+    public static int asuraAttackCooldown = 220;
+    
+    /** Cooldown do Animal Summon em ticks */
+    public static int animalSummonCooldown = 240;
+    
+    /** Cooldown do Chakra Absorption em ticks */
+    public static int chakraAbsorptionCooldown = 300;
+    
+    /** Cooldown do Soul Rip em ticks */
+    public static int soulRipCooldown = 350;
     
     // ==================== INTEGRAÇÃO DRAGON BLOCK C ====================
     
@@ -109,6 +163,42 @@ public class ConfigHandler {
                 5.0f, 0.0f, 100.0f, 
                 "Dano causado por cada Shadow Clone");
             
+            amaterasuDamage = config.getFloat("AmaterasuDamage", "damage", 
+                25.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Amaterasu");
+            
+            eightGatesDamage = config.getFloat("EightGatesDamage", "damage", 
+                5.0f, 0.0f, 100.0f, 
+                "Auto-dano causado pelo Eight Gates");
+            
+            waterDragonDamage = config.getFloat("WaterDragonDamage", "damage", 
+                20.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Water Dragon");
+            
+            shinraTenseiDamage = config.getFloat("ShinraTenseiDamage", "damage", 
+                18.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Shinra Tensei");
+            
+            banshoTeninDamage = config.getFloat("BanshoTeninDamage", "damage", 
+                8.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Bansho Tenin");
+            
+            asuraAttackDamage = config.getFloat("AsuraAttackDamage", "damage", 
+                15.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Asura Attack");
+            
+            animalSummonDamage = config.getFloat("AnimalSummonDamage", "damage", 
+                10.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Animal Summon");
+            
+            chakraAbsorptionHeal = config.getFloat("ChakraAbsorptionHeal", "damage", 
+                10.0f, 0.0f, 100.0f, 
+                "Cura fornecida pelo Chakra Absorption");
+            
+            soulRipDamage = config.getFloat("SoulRipDamage", "damage", 
+                30.0f, 0.0f, 100.0f, 
+                "Dano causado pelo Soul Rip");
+            
             // ==================== CATEGORIA: PARTÍCULAS ====================
             enableParticles = config.getBoolean("EnableParticles", "particles", 
                 true, 
@@ -138,6 +228,42 @@ public class ConfigHandler {
             substitutionCooldown = config.getInt("SubstitutionCooldown", "cooldowns", 
                 150, 0, 1000, 
                 "Cooldown do Substitution Jutsu em ticks");
+            
+            amaterasuCooldown = config.getInt("AmaterasuCooldown", "cooldowns", 
+                300, 0, 2000, 
+                "Cooldown do Amaterasu em ticks");
+            
+            eightGatesCooldown = config.getInt("EightGatesCooldown", "cooldowns", 
+                600, 0, 2000, 
+                "Cooldown do Eight Gates em ticks");
+            
+            waterDragonCooldown = config.getInt("WaterDragonCooldown", "cooldowns", 
+                200, 0, 2000, 
+                "Cooldown do Water Dragon em ticks");
+            
+            shinraTenseiCooldown = config.getInt("ShinraTenseiCooldown", "cooldowns", 
+                250, 0, 2000, 
+                "Cooldown do Shinra Tensei em ticks");
+            
+            banshoTeninCooldown = config.getInt("BanshoTeninCooldown", "cooldowns", 
+                180, 0, 2000, 
+                "Cooldown do Bansho Tenin em ticks");
+            
+            asuraAttackCooldown = config.getInt("AsuraAttackCooldown", "cooldowns", 
+                220, 0, 2000, 
+                "Cooldown do Asura Attack em ticks");
+            
+            animalSummonCooldown = config.getInt("AnimalSummonCooldown", "cooldowns", 
+                240, 0, 2000, 
+                "Cooldown do Animal Summon em ticks");
+            
+            chakraAbsorptionCooldown = config.getInt("ChakraAbsorptionCooldown", "cooldowns", 
+                300, 0, 2000, 
+                "Cooldown do Chakra Absorption em ticks");
+            
+            soulRipCooldown = config.getInt("SoulRipCooldown", "cooldowns", 
+                350, 0, 2000, 
+                "Cooldown do Soul Rip em ticks");
             
             // ==================== CATEGORIA: INTEGRAÇÃO DRAGON BLOCK C ====================
             enableDBCIntegration = config.getBoolean("EnableDBCIntegration", "integration", 
