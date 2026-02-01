@@ -394,7 +394,7 @@ for (const [nome, precos] of Object.entries(ingredientes)) {
     piorSupermercado: pior.Supermercado,
     precoMedio: media,
     economiaMaxima: economia,
-    todosPre cos: precos
+    todosPrecos: precos
   });
 }
 

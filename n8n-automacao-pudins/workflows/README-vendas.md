@@ -264,7 +264,7 @@ Em breve entraremos em contato para confirmar detalhes.
 
 Obrigado pela preferência! ❤️
 
-mensagemComerciantе:
+mensagemComerciante:
 🔔 NOVO PEDIDO RECEBIDO!
 
 📝 ID: {{ $json.pedidoId }}
