@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n-server
+    restart: unless-stopped
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    
+    environment:
+      # Autenticação (IMPORTANTE: Mude a senha!)
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:-ChangeMe123!}
+      
+      # Timezone Brasil
+      - GENERIC_TIMEZONE=${TIMEZONE:-America/Sao_Paulo}
+      - TZ=${TIMEZONE:-America/Sao_Paulo}
+      
+      # URL base para webhooks (IMPORTANTE: Coloque seu IP local)
+      - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - N8N_HOST=${N8N_HOST:-0.0.0.0}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
+      
+      # Configurações de execução
+      - EXECUTIONS_PROCESS=main
+      - EXECUTIONS_MODE=regular
+      
+      # Histórico de execuções
+      - EXECUTIONS_DATA_SAVE_ON_ERROR=all
+      - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=${EXECUTIONS_MAX_AGE:-168}
+      
+      # Configurações adicionais
+      - N8N_METRICS=false
+      - N8N_LOG_LEVEL=${LOG_LEVEL:-info}
+      - N8N_LOG_OUTPUT=console
+      
+    volumes:
+      # Dados persistentes do n8n
+      - ./data:/home/node/.n8n
+      
+      # Backups
+      - ./backups:/backups
+      
+      # Logs customizados
+      - ./logs:/logs
+    
+    # Limites de recursos (ajuste conforme seu notebook)
+    deploy:
+      resources:
+        limits:
+          cpus: '${CPU_LIMIT:-2}'
+          memory: ${MEMORY_LIMIT:-2G}
+        reservations:
+          cpus: '${CPU_RESERVE:-0.5}'
+          memory: ${MEMORY_RESERVE:-512M}
+    
+    # Verificação de saúde
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    networks:
+      - n8n-network
+
+networks:
+  n8n-network:
+    driver: bridge
+
+# Volumes nomeados (opcional, se preferir usar volumes ao invés de bind mounts)
+# volumes:
+#   n8n-data:
+#   n8n-backups:

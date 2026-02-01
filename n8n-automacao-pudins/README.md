@@ -47,13 +47,26 @@ Este é um sistema completo de automação desenvolvido com **n8n** para facilit
 n8n-automacao-pudins/
 ├── README.md                          # Este arquivo
 ├── INICIO-RAPIDO.md                   # Guia rápido para começar em 30min
+├── REFERENCIA-RAPIDA.md               # Comandos essenciais
+├── CLOUD-VS-SELFHOSTED.md             # Comparação de opções
+├── docker/                            # 🆕 Projeto Docker pronto! ⭐
+│   ├── README.md                      # Guia do projeto Docker
+│   ├── README-INSTALACAO.md           # Instalação passo a passo
+│   ├── FORMULARIO-CONFIGURACAO.md     # Preencha suas informações
+│   ├── docker-compose.yml             # ✅ Arquivo Docker pronto
+│   ├── .env.example                   # ✅ Template de configuração
+│   └── scripts/                       # Scripts automatizados
+│       ├── setup.sh                   # ✅ Instalador Linux/Mac
+│       ├── setup.ps1                  # ✅ Instalador Windows
+│       ├── backup.sh/ps1              # ✅ Backup automático
+│       └── health-check.sh            # ✅ Verificação de saúde
 ├── docs/                              # Documentação completa
 │   ├── 01-introducao-n8n.md          # Introdução ao n8n
 │   ├── 02-instalacao-configuracao.md # Setup inicial (Cloud)
 │   ├── 03-boas-praticas.md           # Melhores práticas
 │   ├── 04-solucao-problemas.md       # Troubleshooting
-│   ├── 05-servidor-notebook.md       # 🆕 Self-hosting em notebook
-│   └── 06-recomendacoes-especialista.md # 🆕 Dicas avançadas
+│   ├── 05-servidor-notebook.md       # Self-hosting em notebook
+│   └── 06-recomendacoes-especialista.md # Dicas avançadas
 ├── workflows/                         # Workflows n8n prontos
 │   ├── README-vendas.md              # 💰 Automação de vendas
 │   ├── README-estoque.md             # 📦 Gestão de estoque
@@ -68,6 +81,25 @@ n8n-automacao-pudins/
 ## 🚀 Início Rápido
 
 **Quer começar AGORA?** 
+
+### 🎁 NOVO: Projeto Docker Completo e Pronto!
+
+👉 **[Pasta docker/](docker/)** - Tudo pronto para instalar em 10 minutos!
+- ✅ docker-compose.yml configurado
+- ✅ Scripts de instalação automática (Windows/Linux/Mac)
+- ✅ Backups automatizados
+- ✅ Reinicialização agendada
+- ✅ Formulário de configuração guiado
+
+**Execute e pronto:**
+```bash
+cd docker/
+./scripts/setup.sh    # Linux/Mac
+# ou
+.\scripts\setup.ps1   # Windows
+```
+
+---
 
 ### 🤔 Não Sabe Qual Escolher?
 👉 **[Cloud vs Self-Hosted - Comparação Completa](CLOUD-VS-SELFHOSTED.md)** - Descubra qual é melhor para você!

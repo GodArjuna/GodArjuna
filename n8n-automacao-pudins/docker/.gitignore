@@ -1,0 +1,26 @@
+# n8n Docker - Arquivos para ignorar no Git
+
+# Arquivo de configuração (contém senhas!)
+.env
+
+# Dados do n8n (workflows, credenciais, etc)
+data/
+
+# Backups (podem ser grandes)
+backups/*.tar.gz
+backups/*.zip
+backups/manual-*
+backups/auto-*
+
+# Logs
+logs/*.log
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Configurações específicas
+config/*.local.*
