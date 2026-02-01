@@ -69,16 +69,25 @@ n8n-automacao-pudins/
 
 **Quer começar AGORA?** 
 
+### 🤔 Não Sabe Qual Escolher?
+👉 **[Cloud vs Self-Hosted - Comparação Completa](CLOUD-VS-SELFHOSTED.md)** - Descubra qual é melhor para você!
+
 ### 🌐 Opção 1: Cloud (Recomendado para Iniciantes)
 👉 **[Guia de Início Rápido](INICIO-RAPIDO.md)** - Comece em 30 minutos usando n8n Cloud gratuito!
+- ✅ Setup em 5 minutos
+- ✅ Sem manutenção
+- ✅ 5.000 execuções/mês grátis
 
 ### 🖥️ Opção 2: Self-Hosted (100% Gratuito e Ilimitado)
 👉 **[Servidor em Notebook](docs/05-servidor-notebook.md)** - Transforme seu notebook em servidor n8n com reinicialização automática!
+- ✅ Execuções ilimitadas
+- ✅ Controle total
+- ✅ R$ 0,00 de custo
 
 Ou siga o caminho completo:
 
 1. **[Introdução ao n8n](docs/01-introducao-n8n.md)** - Entenda o que é e como funciona
-2. **Escolha:** [Cloud](docs/02-instalacao-configuracao.md) ou [Self-hosted](docs/05-servidor-notebook.md)
+2. **Escolha:** [Cloud](docs/02-instalacao-configuracao.md) ou [Self-hosted](docs/05-servidor-notebook.md) ([Compare](CLOUD-VS-SELFHOSTED.md))
 3. **[Escolha seus Workflows](workflows/)** - Comece com o que você precisa
 4. **[Boas Práticas](docs/03-boas-praticas.md)** - Mantenha tudo organizado
 5. **[Recomendações de Especialista](docs/06-recomendacoes-especialista.md)** - Otimize seu sistema
