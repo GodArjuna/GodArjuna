@@ -1,20 +1,54 @@
-# Sistema de Automação n8n para Negócio de Pudins 🍮
+# Sistema de Automação n8n Self-Hosted para Negócio de Pudins 🍮
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![n8n](https://img.shields.io/badge/n8n-automation-EA4B71)](https://n8n.io)
+[![n8n](https://img.shields.io/badge/n8n-self--hosted-EA4B71)](https://n8n.io)
+[![Windows](https://img.shields.io/badge/Windows-Ready-0078D6)](README-WINDOWS.md)
 [![Portuguese](https://img.shields.io/badge/Language-Portuguese-green)](README.md)
 
 ## 📋 Sobre o Projeto
 
-Este é um sistema completo de automação desenvolvido com **n8n** para facilitar a gestão de um pequeno negócio de venda de pudins sob encomenda.
+Sistema completo de automação usando **n8n self-hosted (GRATUITO)** para gestão de pequenos negócios de venda de pudins sob encomenda.
 
 **🎯 Ideal para:** Pequenos comerciantes, confeiteiros, empreendedores que vendem produtos sob encomenda
 
-**💰 Investimento:** Gratuito (plano free n8n) ou baixo custo
+**💰 Investimento:** R$ 0,00 (100% GRATUITO - Self-Hosted no seu computador)
 
-**⏱️ Tempo para configurar:** 30 minutos (básico) a 3 horas (completo)
+**⏱️ Tempo para configurar:** 15 minutos (instalação automática)
 
-**📚 Conhecimento necessário:** Básico (se usa WhatsApp e planilhas, você consegue!)
+**📚 Conhecimento necessário:** Básico (usar Windows e seguir instruções)
+
+**🪟 Foco:** Windows 10/11 com Docker Desktop
+
+---
+
+## 🚀 INÍCIO RÁPIDO - WINDOWS
+
+### 👉 **[WINDOWS-SETUP.md](WINDOWS-SETUP.md)** - Guia Completo Windows + VSCode
+
+**Instalação em 3 passos:**
+1. Instale Docker Desktop
+2. Execute `.\scripts\setup.ps1`
+3. Acesse http://localhost:5678
+
+**100% GRATUITO • EXECUÇÕES ILIMITADAS • SEM CUSTOS MENSAIS**
+
+---
+
+## ✨ Por Que Self-Hosted?
+
+### ❌ n8n Cloud (NÃO recomendado - PAGO)
+- Limite de 5.000 execuções/mês
+- Após limite: $20-50/mês (R$ 100-250)
+- Custos crescentes conforme uso
+
+### ✅ n8n Self-Hosted (ESTE PROJETO - GRATUITO)
+- **Execuções ILIMITADAS** 
+- **R$ 0,00 de mensalidade**
+- Roda no seu computador Windows
+- Controle total dos dados
+- Funciona offline
+
+**Economia: R$ 1.680/ano!** 💰
 
 ## 🎯 Funcionalidades
 
@@ -45,75 +79,86 @@ Este é um sistema completo de automação desenvolvido com **n8n** para facilit
 
 ```
 n8n-automacao-pudins/
-├── README.md                          # Este arquivo
-├── INICIO-RAPIDO.md                   # Guia rápido para começar em 30min
-├── REFERENCIA-RAPIDA.md               # Comandos essenciais
-├── CLOUD-VS-SELFHOSTED.md             # Comparação de opções
-├── docker/                            # 🆕 Projeto Docker pronto! ⭐
-│   ├── README.md                      # Guia do projeto Docker
-│   ├── README-INSTALACAO.md           # Instalação passo a passo
-│   ├── FORMULARIO-CONFIGURACAO.md     # Preencha suas informações
-│   ├── docker-compose.yml             # ✅ Arquivo Docker pronto
-│   ├── .env.example                   # ✅ Template de configuração
-│   └── scripts/                       # Scripts automatizados
-│       ├── setup.sh                   # ✅ Instalador Linux/Mac
-│       ├── setup.ps1                  # ✅ Instalador Windows
-│       ├── backup.sh/ps1              # ✅ Backup automático
-│       └── health-check.sh            # ✅ Verificação de saúde
-├── docs/                              # Documentação completa
-│   ├── 01-introducao-n8n.md          # Introdução ao n8n
-│   ├── 02-instalacao-configuracao.md # Setup inicial (Cloud)
-│   ├── 03-boas-praticas.md           # Melhores práticas
-│   ├── 04-solucao-problemas.md       # Troubleshooting
-│   ├── 05-servidor-notebook.md       # Self-hosting em notebook
-│   └── 06-recomendacoes-especialista.md # Dicas avançadas
-├── workflows/                         # Workflows n8n prontos
-│   ├── README-vendas.md              # 💰 Automação de vendas
-│   ├── README-estoque.md             # 📦 Gestão de estoque
-│   ├── README-precos.md              # 🏪 Monitor de preços
-│   └── README-marketing.md           # 🤝 CRM e marketing
-└── examples/                          # Exemplos e templates
-    ├── planilhas-templates/          # Templates Google Sheets
-    └── mensagens-templates/          # Templates de mensagens
+├── 📄 README.md (este arquivo)
+├── 📄 WINDOWS-SETUP.md ⭐ GUIA WINDOWS + VSCODE
+├── 📄 README-WINDOWS.md (resumo Windows)
+├── 📄 PROJETO-PRONTO.md (informações necessárias)
+│
+├── 📁 docker/ 🐳 PROJETO DOCKER PRONTO
+│   ├── docker-compose.yml ✅
+│   ├── .env.example ✅
+│   └── scripts/
+│       ├── setup.ps1 ⭐ EXECUTE ESTE (Windows)
+│       ├── backup.ps1 (backup Windows)
+│       └── health-check.sh
+│
+├── 📁 docs/ (documentação detalhada)
+│   ├── 01-introducao-n8n.md
+│   ├── 02-instalacao-configuracao.md
+│   ├── 03-boas-praticas.md
+│   ├── 04-solucao-problemas.md
+│   ├── 05-servidor-notebook.md
+│   └── 06-recomendacoes-especialista.md
+│
+├── 📁 workflows/ (automações prontas)
+│   ├── README-vendas.md 💰
+│   ├── README-estoque.md 📦
+│   ├── README-precos.md 🏪
+│   └── README-marketing.md 🤝
+│
+└── 📁 examples/ (templates)
+    ├── planilhas-templates/
+    └── mensagens-templates/
 
 ```
 
-## 🚀 Início Rápido
+## 🚀 Início Rápido - Windows
 
-**Quer começar AGORA?** 
+### 🪟 **[WINDOWS-SETUP.md](WINDOWS-SETUP.md)** ⭐ COMECE AQUI
 
-### 🎁 NOVO: Projeto Docker Completo e Pronto!
+**Guia completo Windows com VSCode:**
+- Como baixar e instalar
+- Como abrir no VSCode  
+- Terminal integrado
+- Comandos úteis no Windows
+- Dicas de produtividade
 
-👉 **[Pasta docker/](docker/)** - Tudo pronto para instalar em 10 minutos!
-- ✅ docker-compose.yml configurado
-- ✅ Scripts de instalação automática (Windows/Linux/Mac)
-- ✅ Backups automatizados
-- ✅ Reinicialização agendada
-- ✅ Formulário de configuração guiado
+### ⚡ Instalação Ultra-Rápida (3 passos)
 
-**Execute e pronto:**
-```bash
-cd docker/
-./scripts/setup.sh    # Linux/Mac
-# ou
-.\scripts\setup.ps1   # Windows
+```powershell
+# 1. Baixe o projeto (Git ou ZIP)
+git clone https://github.com/GodArjuna/GodArjuna.git
+cd GodArjuna\n8n-automacao-pudins\docker
+
+# 2. Execute o instalador Windows
+.\scripts\setup.ps1
+
+# 3. Acesse no navegador
+# http://localhost:5678
 ```
+
+**Tempo:** 15 minutos  
+**Custo:** R$ 0,00  
+**Limite:** NENHUM!
 
 ---
 
-### 🤔 Não Sabe Qual Escolher?
-👉 **[Cloud vs Self-Hosted - Comparação Completa](CLOUD-VS-SELFHOSTED.md)** - Descubra qual é melhor para você!
+## 💻 Como Abrir no VSCode
 
-### 🌐 Opção 1: Cloud (Recomendado para Iniciantes)
-👉 **[Guia de Início Rápido](INICIO-RAPIDO.md)** - Comece em 30 minutos usando n8n Cloud gratuito!
-- ✅ Setup em 5 minutos
-- ✅ Sem manutenção
-- ✅ 5.000 execuções/mês grátis
+### Método Rápido
+```powershell
+cd C:\Users\SeuNome\Documents\GodArjuna\n8n-automacao-pudins
+code .
+```
 
-### 🖥️ Opção 2: Self-Hosted (100% Gratuito e Ilimitado)
-👉 **[Servidor em Notebook](docs/05-servidor-notebook.md)** - Transforme seu notebook em servidor n8n com reinicialização automática!
-- ✅ Execuções ilimitadas
-- ✅ Controle total
+### Pelo VSCode
+```
+File → Open Folder → Selecione a pasta n8n-automacao-pudins
+```
+
+**Guia completo:** [WINDOWS-SETUP.md](WINDOWS-SETUP.md)
+
+---
 - ✅ R$ 0,00 de custo
 
 Ou siga o caminho completo:

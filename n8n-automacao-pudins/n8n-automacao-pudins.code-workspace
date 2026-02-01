@@ -1,0 +1,55 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/node_modules": true,
+      "docker/data/**": true,
+      "docker/backups/*.tar.gz": true,
+      "docker/backups/*.zip": true,
+      "docker/logs/*.log": true
+    },
+    "files.associations": {
+      "*.yml": "yaml",
+      "*.yaml": "yaml",
+      ".env*": "properties",
+      "docker-compose.yml": "yaml"
+    },
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "[markdown]": {
+      "editor.wordWrap": "on",
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      }
+    },
+    "[yaml]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.autoIndent": "advanced"
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "docker/data/**": true,
+      "docker/backups/**": true,
+      "docker/logs/**": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.powershell",
+      "ms-azuretools.vscode-docker",
+      "yzhang.markdown-all-in-one",
+      "redhat.vscode-yaml"
+    ]
+  }
+}
