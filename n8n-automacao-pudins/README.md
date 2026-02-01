@@ -49,9 +49,11 @@ n8n-automacao-pudins/
 ├── INICIO-RAPIDO.md                   # Guia rápido para começar em 30min
 ├── docs/                              # Documentação completa
 │   ├── 01-introducao-n8n.md          # Introdução ao n8n
-│   ├── 02-instalacao-configuracao.md # Setup inicial
+│   ├── 02-instalacao-configuracao.md # Setup inicial (Cloud)
 │   ├── 03-boas-praticas.md           # Melhores práticas
-│   └── 04-solucao-problemas.md       # Troubleshooting
+│   ├── 04-solucao-problemas.md       # Troubleshooting
+│   ├── 05-servidor-notebook.md       # 🆕 Self-hosting em notebook
+│   └── 06-recomendacoes-especialista.md # 🆕 Dicas avançadas
 ├── workflows/                         # Workflows n8n prontos
 │   ├── README-vendas.md              # 💰 Automação de vendas
 │   ├── README-estoque.md             # 📦 Gestão de estoque
@@ -67,14 +69,19 @@ n8n-automacao-pudins/
 
 **Quer começar AGORA?** 
 
-👉 **[Guia de Início Rápido](INICIO-RAPIDO.md)** - Comece em 30 minutos!
+### 🌐 Opção 1: Cloud (Recomendado para Iniciantes)
+👉 **[Guia de Início Rápido](INICIO-RAPIDO.md)** - Comece em 30 minutos usando n8n Cloud gratuito!
+
+### 🖥️ Opção 2: Self-Hosted (100% Gratuito e Ilimitado)
+👉 **[Servidor em Notebook](docs/05-servidor-notebook.md)** - Transforme seu notebook em servidor n8n com reinicialização automática!
 
 Ou siga o caminho completo:
 
 1. **[Introdução ao n8n](docs/01-introducao-n8n.md)** - Entenda o que é e como funciona
-2. **[Instalação e Configuração](docs/02-instalacao-configuracao.md)** - Setup passo a passo
+2. **Escolha:** [Cloud](docs/02-instalacao-configuracao.md) ou [Self-hosted](docs/05-servidor-notebook.md)
 3. **[Escolha seus Workflows](workflows/)** - Comece com o que você precisa
 4. **[Boas Práticas](docs/03-boas-praticas.md)** - Mantenha tudo organizado
+5. **[Recomendações de Especialista](docs/06-recomendacoes-especialista.md)** - Otimize seu sistema
 
 ---
 
@@ -84,9 +91,15 @@ Ou siga o caminho completo:
 
 - **[🚀 Início Rápido](INICIO-RAPIDO.md)** - Comece em 30 minutos
 - **[📘 Introdução ao n8n](docs/01-introducao-n8n.md)** - O que é n8n e como funciona
-- **[🔧 Instalação e Configuração](docs/02-instalacao-configuracao.md)** - Setup passo a passo
+
+**Instalação:**
+- **[☁️ n8n Cloud](docs/02-instalacao-configuracao.md)** - Setup em cloud (gratuito com limites)
+- **[🖥️ Self-Hosted](docs/05-servidor-notebook.md)** - Servidor em notebook (100% gratuito e ilimitado)
+
+**Manutenção:**
 - **[✨ Boas Práticas](docs/03-boas-praticas.md)** - Dicas para manter suas automações organizadas
 - **[🔍 Solução de Problemas](docs/04-solucao-problemas.md)** - Troubleshooting comum
+- **[🎓 Recomendações de Especialista](docs/06-recomendacoes-especialista.md)** - Otimizações avançadas
 
 ### 🤖 Workflows Disponíveis
 
